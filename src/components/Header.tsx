@@ -20,7 +20,7 @@ const Header = () => {
       <div className="container flex h-16 items-center justify-between">
         <Link to="/" className="flex items-center gap-2 font-display text-xl font-bold text-primary dark:drop-shadow-[0_0_8px_hsl(var(--primary)/0.5)]">
           <Shield className="h-6 w-6" />
-          <span>MedBlock</span>
+          <span>Gihon Tech</span>
         </Link>
 
         {/* Desktop nav */}
