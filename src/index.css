@@ -22,9 +22,9 @@
     --secondary-foreground: 200 50% 10%;
 
     --muted: 210 15% 95%;
-    --muted-foreground: 200 15% 45%;
-
-    --accent: 160 70% 38%;
+      --primary: 192 55% 22%;
+      --primary-foreground: 0 0% 100%;
+    --accent: 160 50% 30%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
@@ -50,10 +50,11 @@
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
     --sidebar-primary: 240 5.9% 10%;
+      --block-highlight: 192 45% 18%;
     --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 240 4.8% 95.9%;
-    --sidebar-accent-foreground: 240 5.9% 10%;
-    --sidebar-border: 220 13% 91%;
+      --hero-gradient-start: 192 55% 18%;
+      --hero-gradient-end: 200 45% 10%;
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -70,7 +71,7 @@
     --secondary-foreground: 180 10% 92%;
     --muted: 220 20% 12%;
     --muted-foreground: 200 15% 55%;
-    --accent: 145 100% 50%;
+    --accent: 145 45% 36%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 85% 55%;
     --destructive-foreground: 0 0% 100%;
@@ -88,7 +89,7 @@
     --glass: 220 30% 8%;
 
     --neon-glow: 0 0 10px hsl(180 100% 50% / 0.3), 0 0 40px hsl(180 100% 50% / 0.1);
-    --neon-glow-accent: 0 0 10px hsl(145 100% 50% / 0.3), 0 0 40px hsl(145 100% 50% / 0.1);
+    --neon-glow-accent: 0 0 6px hsl(145 45% 36% / 0.15), 0 0 20px hsl(145 45% 36% / 0.04);
   }
 }
 
@@ -202,29 +203,29 @@
       filter: saturate(1);
     }
     6% {
-      box-shadow: 0 10px 40px hsl(var(--accent) / 0.35), 0 0 12px hsl(var(--accent) / 0.08);
+      box-shadow: 0 10px 40px hsl(var(--accent) / 0.18), 0 0 12px hsl(var(--accent) / 0.04);
       transform: translateY(-6px) scale(1.03);
       filter: saturate(1.05);
     }
     12% {
-      box-shadow: 0 22px 80px hsl(var(--accent) / 0.72), 0 0 36px hsl(var(--accent) / 0.22);
+      box-shadow: 0 22px 80px hsl(var(--accent) / 0.36), 0 0 36px hsl(var(--accent) / 0.11);
       transform: translateY(-14px) scale(1.1);
       filter: saturate(1.14);
     }
     20% {
-      box-shadow: 0 14px 52px hsl(var(--accent) / 0.48), 0 0 20px hsl(var(--accent) / 0.14);
+      box-shadow: 0 14px 52px hsl(var(--accent) / 0.24), 0 0 20px hsl(var(--accent) / 0.07);
       transform: translateY(-8px) scale(1.05);
     }
     30% {
-      box-shadow: 0 8px 32px hsl(var(--accent) / 0.36);
+      box-shadow: 0 8px 32px hsl(var(--accent) / 0.18);
       transform: translateY(-4px) scale(1.02);
     }
     42% {
-      box-shadow: 0 4px 18px hsl(var(--accent) / 0.28);
+      box-shadow: 0 4px 18px hsl(var(--accent) / 0.14);
       transform: translateY(-2px) scale(1.01);
     }
     58% {
-      box-shadow: 0 2px 10px hsl(var(--accent) / 0.22);
+      box-shadow: 0 2px 10px hsl(var(--accent) / 0.11);
       transform: translateY(-1px) scale(1.005);
     }
     75% {
@@ -238,6 +239,33 @@
   }
 
   /* sliding wave removed */
+  
+  /* Dimmed button variant — use alongside existing button classes to reduce brightness */
+  .btn-dim {
+    /* light, non-glowing blue */
+    background-color: hsl(203 90% 70%) !important;
+    color: hsl(212 40% 10%) !important;
+    box-shadow: none !important;
+    transition: background-color .15s ease, transform .08s ease;
+  }
+  .btn-dim:hover {
+    background-color: hsl(203 85% 64%) !important;
+    box-shadow: none !important;
+  }
+  .btn-dim:active {
+    transform: translateY(1px);
+  }
+  .btn-dim:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+  }
+
+  /* Slightly darker in dark mode for enough contrast */
+  .dark .btn-dim {
+    background-color: hsl(203 80% 56%) !important;
+    color: hsl(0 0% 100%) !important;
+  }
+
 }
 
 @layer utilities {
