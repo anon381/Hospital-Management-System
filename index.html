@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Ensure dark mode is the default on first load. If user explicitly set theme='light' in localStorage, respect that. -->
+    <script>!function(){try{const t=localStorage.getItem('theme');if(t==='light')document.documentElement.classList.remove('dark');else document.documentElement.classList.add('dark')}catch(e){document.documentElement.classList.add('dark')}}();</script>
     <!-- Document title and meta updated for this project -->
     <title>Hospital Management System</title>
     <meta name="description" content="Hospital Management System" />

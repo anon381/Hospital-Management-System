@@ -7,7 +7,6 @@ import WorkflowSnapshot from "@/components/WorkflowSnapshot";
 import DashboardPreview from "@/components/DashboardPreview";
 import SecurityCompliance from "@/components/SecurityCompliance";
 import Testimonials from "@/components/Testimonials";
-import CTADemo from "@/components/CTADemo";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -22,7 +21,6 @@ const Index = () => {
       <DashboardPreview />
       <SecurityCompliance />
       <Testimonials />
-      <CTADemo />
       <Footer />
     </div>
   );
