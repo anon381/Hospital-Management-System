@@ -186,6 +186,58 @@
   .hex-border {
     @apply border border-dashed border-chain;
   }
+
+  /* Wave-style glow animation for workflow steps (staggered on each card produces flowing wave) */
+  .glow-animate {
+    animation-name: glow-wave;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    will-change: box-shadow, transform, filter;
+  }
+
+  @keyframes glow-wave {
+    0% {
+      box-shadow: none;
+      transform: translateY(0) scale(1);
+      filter: saturate(1);
+    }
+    6% {
+      box-shadow: 0 10px 40px hsl(var(--accent) / 0.35), 0 0 12px hsl(var(--accent) / 0.08);
+      transform: translateY(-6px) scale(1.03);
+      filter: saturate(1.05);
+    }
+    12% {
+      box-shadow: 0 22px 80px hsl(var(--accent) / 0.72), 0 0 36px hsl(var(--accent) / 0.22);
+      transform: translateY(-14px) scale(1.1);
+      filter: saturate(1.14);
+    }
+    20% {
+      box-shadow: 0 14px 52px hsl(var(--accent) / 0.48), 0 0 20px hsl(var(--accent) / 0.14);
+      transform: translateY(-8px) scale(1.05);
+    }
+    30% {
+      box-shadow: 0 8px 32px hsl(var(--accent) / 0.36);
+      transform: translateY(-4px) scale(1.02);
+    }
+    42% {
+      box-shadow: 0 4px 18px hsl(var(--accent) / 0.28);
+      transform: translateY(-2px) scale(1.01);
+    }
+    58% {
+      box-shadow: 0 2px 10px hsl(var(--accent) / 0.22);
+      transform: translateY(-1px) scale(1.005);
+    }
+    75% {
+      box-shadow: 0 0 0 transparent;
+      transform: translateY(0) scale(1);
+    }
+    100% {
+      box-shadow: none;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  /* sliding wave removed */
 }
 
 @layer utilities {

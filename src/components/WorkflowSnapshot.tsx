@@ -33,19 +33,19 @@ const WorkflowSnapshot = () => {
           <p className="text-muted-foreground max-w-md mx-auto">Every step recorded as an immutable transaction.</p>
         </div>
 
-        <div className="flex flex-col md:flex-row items-stretch justify-center gap-0 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 max-w-4xl mx-auto items-stretch">
           {steps.map((step, i) => (
-            <div key={step.title} className="flex items-center flex-1">
-              <div className="block-card flex-1 text-center py-8 px-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
-                  <step.icon className="h-6 w-6 text-primary" />
-                </div>
-                <h3 className="font-semibold mb-1">{step.title}</h3>
-                <p className="text-xs text-muted-foreground">{step.desc}</p>
+            <div
+              key={step.title}
+              className="block-card text-center py-8 px-4 h-full glow-animate"
+              style={{ animationDelay: `${i * 1.2}s`, animationDuration: `${steps.length * 1.2}s` }}
+            >
+              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mx-auto mb-3">
+                <step.icon className="h-6 w-6 text-primary" />
               </div>
-              {i < steps.length - 1 && (
-                <div className="hidden md:block chain-connector" />
-              )}
+              <h3 className="font-semibold mb-1">{step.title}</h3>
+              <p className="text-xs text-muted-foreground">{step.desc}</p>
+
               {i < steps.length - 1 && (
                 <div className="md:hidden flex justify-center py-2">
                   <div className="w-0.5 h-6 bg-chain chain-pulse" />
