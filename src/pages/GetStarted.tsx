@@ -53,6 +53,8 @@ const GetStarted = () => {
     setSubmitted(true);
   };
 
+  
+
   return (
     <div className="min-h-screen bg-background">
       <Header />
@@ -64,6 +66,14 @@ const GetStarted = () => {
         <div className="mb-8">
           <h1 className="text-3xl font-bold mb-2">Get Started</h1>
           <p className="text-muted-foreground">Enter your information to continue</p>
+          <div className="flex gap-3 mt-4">
+            <Link to="/auth/signin">
+              <Button variant="outline" size="sm">Sign In</Button>
+            </Link>
+            <Link to="/auth/signup">
+              <Button variant="default" size="sm">Sign Up</Button>
+            </Link>
+          </div>
         </div>
 
         {!submitted ? (
