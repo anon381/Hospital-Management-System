@@ -22,7 +22,7 @@ const DashboardPreview = () => {
             </div>
 
             <div className="space-y-2">
-              {["09:00 — Sarah K. (Follow-up)", "10:30 — James M. (New Patient)", "14:00 — Lisa R. (Telehealth)"].map((item, i) => (
+              {["09:00 — Sarah K. (Follow-up)", "10:30 — James M. (New Appointment)", "14:00 — Lisa R. (Telehealth)"].map((item, i) => (
                 <div key={i} className="flex items-center justify-between text-sm p-2.5 rounded bg-block-bg border border-block-border">
                   <span>{item}</span>
                   <span className="text-xs text-accent">✓</span>
@@ -53,7 +53,7 @@ const DashboardPreview = () => {
 
             <div className="space-y-2">
               {[
-                { label: "Patient Admissions", value: "347", change: "+8%" },
+                { label: "Admissions", value: "347", change: "+8%" },
                 { label: "Bed Occupancy", value: "82%", change: "Stable" },
                 { label: "Revenue (MTD)", value: "$2.4M", change: "+15%" },
               ].map((item, i) => (

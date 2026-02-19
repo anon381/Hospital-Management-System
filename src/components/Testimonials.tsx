@@ -16,7 +16,7 @@ const testimonials = [
   {
     quote: "Booking appointments is finally transparent and stress-free.",
     name: "Sarah Williams",
-    role: "Patient",
+    role: "User",
     metric: "8 min avg. wait",
   },
 ];

@@ -28,7 +28,7 @@ const Hero = () => {
 
             <p className="text-lg text-primary-foreground/70 max-w-lg">
               Scheduling, records, billing — all on an immutable ledger.
-              Built for admins, doctors, and patients who demand transparency.
+              Built for admins and doctors who demand transparency.
             </p>
 
             <div className="flex flex-wrap gap-4 pt-2">
@@ -48,7 +48,7 @@ const Hero = () => {
             <div className="flex flex-wrap gap-6 pt-4 text-sm text-primary-foreground/60">
               <span className="flex items-center gap-1.5"><Lock className="h-3.5 w-3.5" /> Admin: Full audit control</span>
               <span className="flex items-center gap-1.5"><Activity className="h-3.5 w-3.5" /> Doctor: Real-time schedules</span>
-              <span className="flex items-center gap-1.5"><FileText className="h-3.5 w-3.5" /> Patient: Transparent records</span>
+              <span className="flex items-center gap-1.5"><FileText className="h-3.5 w-3.5" /> Records: Transparent records</span>
             </div>
           </div>
 

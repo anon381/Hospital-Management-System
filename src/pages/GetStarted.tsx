@@ -6,13 +6,13 @@ import { ArrowLeft, Stethoscope, Building2, User, Shield, CheckCircle2 } from "l
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-type Role = "doctor" | "hospital" | "patient" | null;
+type Role = "doctor" | "hospital" | null;
 
 const roleConfig = {
   doctor: {
     icon: Stethoscope,
     title: "Doctor",
-    subtitle: "Refer patients and access referral history",
+    subtitle: "Refer records and access referral history",
     fields: [
       { name: "name", placeholder: "Full Name", type: "text" },
       { name: "license", placeholder: "License / ID Number", type: "text" },
@@ -24,7 +24,7 @@ const roleConfig = {
   hospital: {
     icon: Building2,
     title: "Hospital",
-    subtitle: "Manage facility records and patient data",
+    subtitle: "Manage facility records and clinical data",
     fields: [
       { name: "facility", placeholder: "Facility Name", type: "text" },
       { name: "contact", placeholder: "Admin Contact Name", type: "text" },
@@ -33,17 +33,7 @@ const roleConfig = {
     ],
     cta: "Continue to Hospital Dashboard",
   },
-  patient: {
-    icon: User,
-    title: "Patient",
-    subtitle: "Book appointments and access your records",
-    fields: [
-      { name: "name", placeholder: "Full Name", type: "text" },
-      { name: "phone", placeholder: "Phone Number", type: "tel" },
-      { name: "email", placeholder: "Email Address", type: "email" },
-    ],
-    cta: "Book Appointment",
-  },
+  /* patient role removed */
 };
 
 const GetStarted = () => {
@@ -53,8 +43,8 @@ const GetStarted = () => {
 
   useEffect(() => {
     const role = searchParams.get("role");
-    if (role && (role === "doctor" || role === "hospital" || role === "patient")) {
-      setSelectedRole(role);
+    if (role && (role === "doctor" || role === "hospital")) {
+      setSelectedRole(role as Role);
     }
   }, [searchParams]);
 

@@ -6,7 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const kpis = [
-  { label: "Total Patients", value: "1,247", change: "+12%", icon: Users },
+  { label: "Total Admissions", value: "1,247", change: "+12%", icon: Users },
   { label: "Bed Occupancy", value: "82%", change: "Stable", icon: BedDouble },
   { label: "Revenue (MTD)", value: "$2.4M", change: "+15%", icon: DollarSign },
   { label: "Active Staff", value: "186", change: "+3", icon: Activity },
@@ -79,9 +79,9 @@ const HospitalDashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="space-y-2">
-                  <div className="grid grid-cols-4 text-[10px] text-muted-foreground font-medium uppercase tracking-wider px-3 pb-1">
+                    <div className="grid grid-cols-4 text-[10px] text-muted-foreground font-medium uppercase tracking-wider px-3 pb-1">
                     <span>Department</span>
-                    <span className="text-center">Patients</span>
+                    <span className="text-center">Admissions</span>
                     <span className="text-center">Beds</span>
                     <span className="text-right">Status</span>
                   </div>
@@ -109,7 +109,7 @@ const HospitalDashboard = () => {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-3 gap-3">
-                  {["Financial Report", "Staff Report", "Patient Report"].map((report, i) => (
+                  {["Financial Report", "Staff Report", "Admissions Report"].map((report, i) => (
                     <button key={i} className="p-4 rounded-lg border border-block-border bg-block-bg text-center hover:border-primary/40 dark:hover:shadow-[0_0_12px_hsl(var(--primary)/0.15)] transition-all">
                       <FileText className="h-5 w-5 text-primary mx-auto mb-2" />
                       <p className="text-xs font-medium">{report}</p>
@@ -173,7 +173,7 @@ const HospitalDashboard = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-2">
-                <Button variant="hero" className="w-full">Add New Patient</Button>
+                <Button variant="hero" className="w-full">Add Admission</Button>
                 <Button variant="hero-outline" className="w-full">Generate Report</Button>
                 <Button variant="outline" className="w-full">Manage Staff</Button>
               </CardContent>

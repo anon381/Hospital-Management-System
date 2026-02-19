@@ -4,7 +4,7 @@ const points = [
   {
     icon: Lock,
     title: "Encrypted Records",
-    desc: "All patient data encrypted at rest and in transit with AES-256.",
+    desc: "All records encrypted at rest and in transit with AES-256.",
   },
   {
     icon: ScrollText,

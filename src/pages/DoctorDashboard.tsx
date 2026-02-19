@@ -8,7 +8,7 @@ import Footer from "@/components/Footer";
 
 const tasks = [
   { title: "Review MRI results", patient: "H. Tadesse", time: "Today", icon: FileText },
-  { title: "Call patient back", patient: "S. Bekele lab clarification", time: "In 2 hrs", icon: ClipboardList },
+  { title: "Call back", patient: "S. Bekele lab clarification", time: "In 2 hrs", icon: ClipboardList },
   { title: "Sign referral", patient: "M. Kidane → Orthopedics", time: "By end of day", icon: ArrowRight },
 ];
 
@@ -54,8 +54,8 @@ const DoctorDashboard = () => {
                   <div className="w-20 h-20 mx-auto rounded-xl bg-primary/10 dark:bg-primary/20 dark:shadow-[0_0_20px_hsl(var(--primary)/0.3)] flex items-center justify-center mb-3">
                     <Camera className="h-8 w-8 text-primary" />
                   </div>
-                  <p className="text-sm font-medium mb-1">Scan patient QR</p>
-                  <p className="text-xs text-muted-foreground">Open the camera to scan a patient QR code.</p>
+                  <p className="text-sm font-medium mb-1">Scan QR</p>
+                  <p className="text-xs text-muted-foreground">Open the camera to scan a QR code.</p>
                 </div>
                 <Button variant="hero" className="w-full">
                   <Camera className="h-4 w-4" /> Open Scanner
@@ -79,15 +79,15 @@ const DoctorDashboard = () => {
               </CardContent>
             </Card>
 
-            {/* Patient Search */}
+            {/* Record Search */}
             <Card className="border-block-border bg-card">
               <CardHeader className="pb-3">
                 <CardTitle className="text-base flex items-center gap-2">
-                  <Search className="h-4 w-4 text-primary" /> Patient search
+                  <Search className="h-4 w-4 text-primary" /> Record search
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <Input placeholder="Search patients..." className="bg-background mb-3" />
+                <Input placeholder="Search records..." className="bg-background mb-3" />
                 <p className="text-xs text-muted-foreground mb-2">Recent</p>
                 <div className="flex flex-wrap gap-2">
                   {recentSearch.map((name) => (
@@ -117,7 +117,7 @@ const DoctorDashboard = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm font-medium">{task.title}</p>
-                      <p className="text-xs text-muted-foreground truncate">Patient: {task.patient}</p>
+                      <p className="text-xs text-muted-foreground truncate">Record: {task.patient}</p>
                     </div>
                     <span className="text-[10px] text-muted-foreground shrink-0 mt-1">{task.time}</span>
                   </div>
@@ -141,11 +141,11 @@ const DoctorDashboard = () => {
               ))}
             </div>
 
-            {/* Patient Timeline */}
+            {/* Record Timeline */}
             <Card className="border-block-border bg-card">
               <CardHeader className="pb-3">
                 <CardTitle className="text-base flex items-center gap-2">
-                  <User className="h-4 w-4 text-primary" /> Patient profile timeline
+                  <User className="h-4 w-4 text-primary" /> Record timeline
                 </CardTitle>
                 <span className="text-xs text-muted-foreground">Recent</span>
               </CardHeader>
@@ -191,7 +191,7 @@ const DoctorDashboard = () => {
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <p className="text-xs text-muted-foreground mb-4">Attach PDF or images to the patient record.</p>
+                <p className="text-xs text-muted-foreground mb-4">Attach PDF or images to the record.</p>
                 <div className="border-2 border-dashed border-block-border rounded-lg p-6 text-center hover:border-primary/40 dark:hover:shadow-[0_0_15px_hsl(var(--primary)/0.1)] transition-all cursor-pointer">
                   <Upload className="h-6 w-6 text-muted-foreground mx-auto mb-2" />
                   <p className="text-xs text-muted-foreground">Drop files or click to browse</p>

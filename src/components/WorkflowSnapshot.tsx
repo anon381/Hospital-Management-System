@@ -4,7 +4,7 @@ const steps = [
   {
     icon: CalendarPlus,
     title: "Book",
-    desc: "Patient selects slot and submits request.",
+    desc: "User selects slot and submits request.",
   },
   {
     icon: CheckCircle2,

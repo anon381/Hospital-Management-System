@@ -8,7 +8,7 @@ const kpis = [
     icon: CalendarCheck,
   },
   {
-    label: "Active Patients",
+    label: "Active Records",
     value: "34,891",
     trend: "98.7% records verified",
     icon: Users,

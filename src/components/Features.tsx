@@ -8,7 +8,7 @@ const features = [
     icon: Calendar,
   },
   {
-    title: "EHR & Patient Records",
+    title: "EHR & Records",
     benefit: "Immutable electronic health records with full audit trails.",
     bullets: ["Version-controlled records", "Role-based access control"],
     icon: FileHeart,

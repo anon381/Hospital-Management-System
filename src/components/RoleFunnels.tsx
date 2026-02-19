@@ -4,18 +4,9 @@ import { User, Stethoscope, Building2, Shield, CalendarCheck, FileText, Clipboar
 
 const roles = [
   {
-    title: "Patient",
-    icon: User,
-    promise: "Book appointments and access your records securely.",
-    actions: ["Book Appointment", "View Records", "Track Billing"],
-    cta: "Book Appointment",
-    ctaLink: "/get-started?role=patient",
-    badge: "HIPAA Compliant",
-  },
-  {
     title: "Doctor",
     icon: Stethoscope,
-    promise: "Refer patients and access referral history.",
+    promise: "Refer records and access referral history.",
     actions: ["View Schedule", "Manage Referrals", "Access EHR"],
     cta: "Open Dashboard",
     ctaLink: "/get-started?role=doctor",
@@ -24,9 +15,9 @@ const roles = [
   {
     title: "Hospital",
     icon: Building2,
-    promise: "Manage facility records and patient data.",
+    promise: "Manage facility records and clinical data.",
     actions: ["Admin Dashboard", "Audit Reports", "Staff Management"],
-    cta: "Request Demo",
+    cta: "Get Started",
     ctaLink: "/get-started?role=hospital",
     badge: "Enterprise Ready",
   },
@@ -41,7 +32,7 @@ const RoleFunnels = () => {
           <p className="text-muted-foreground max-w-md mx-auto">Choose your role to get started with the right tools and permissions.</p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-6 max-w-3xl mx-auto">
           {roles.map((role, i) => (
             <div
               key={role.title}
