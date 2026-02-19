@@ -1,0 +1,198 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 210 20% 98%;
+    --foreground: 200 50% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 200 50% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 200 50% 10%;
+
+    --primary: 192 80% 25%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 200 25% 93%;
+    --secondary-foreground: 200 50% 10%;
+
+    --muted: 210 15% 95%;
+    --muted-foreground: 200 15% 45%;
+
+    --accent: 160 70% 38%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 200 20% 88%;
+    --input: 200 20% 88%;
+    --ring: 192 80% 25%;
+
+    --radius: 0.625rem;
+
+    /* Custom tokens */
+    --chain: 192 60% 80%;
+    --chain-accent: 160 70% 38%;
+    --block-bg: 200 30% 97%;
+    --block-border: 200 25% 85%;
+    --block-highlight: 192 80% 25%;
+    --kpi-trend: 160 60% 40%;
+    --hero-gradient-start: 192 80% 20%;
+    --hero-gradient-end: 200 60% 12%;
+    --glass: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 25% 4%;
+    --foreground: 180 10% 92%;
+    --card: 220 30% 7%;
+    --card-foreground: 180 10% 92%;
+    --popover: 220 30% 7%;
+    --popover-foreground: 180 10% 92%;
+    --primary: 180 100% 50%;
+    --primary-foreground: 220 30% 4%;
+    --secondary: 220 25% 12%;
+    --secondary-foreground: 180 10% 92%;
+    --muted: 220 20% 12%;
+    --muted-foreground: 200 15% 55%;
+    --accent: 145 100% 50%;
+    --accent-foreground: 220 30% 4%;
+    --destructive: 0 85% 55%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 200 30% 14%;
+    --input: 200 30% 14%;
+    --ring: 180 100% 50%;
+    --chain: 180 80% 35%;
+    --chain-accent: 145 100% 50%;
+    --block-bg: 220 30% 6%;
+    --block-border: 200 30% 15%;
+    --block-highlight: 180 100% 50%;
+    --kpi-trend: 145 90% 55%;
+    --hero-gradient-start: 220 40% 6%;
+    --hero-gradient-end: 230 30% 3%;
+    --glass: 220 30% 8%;
+
+    --neon-glow: 0 0 10px hsl(180 100% 50% / 0.3), 0 0 40px hsl(180 100% 50% / 0.1);
+    --neon-glow-accent: 0 0 10px hsl(145 100% 50% / 0.3), 0 0 40px hsl(145 100% 50% / 0.1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  /* Neon glow effects for dark mode */
+  .dark .block-card {
+    box-shadow: 0 0 15px hsl(180 100% 50% / 0.05), 0 1px 3px hsl(var(--block-border) / 0.3);
+  }
+  .dark .block-card::before {
+    box-shadow: 0 0 8px hsl(180 100% 50% / 0.4);
+  }
+  .dark .verified-badge {
+    box-shadow: 0 0 8px hsl(145 100% 50% / 0.15);
+  }
+  .dark .chain-connector {
+    box-shadow: 0 0 6px hsl(180 100% 50% / 0.3);
+  }
+
+  /* Block card — ledger/chain style */
+  .block-card {
+    @apply relative bg-card border border-block-border rounded-lg p-6 overflow-hidden;
+    box-shadow: 0 1px 3px hsl(var(--block-border) / 0.3);
+  }
+  .block-card::before {
+    content: '';
+    @apply absolute top-0 left-0 w-1 h-full bg-primary rounded-l-lg;
+  }
+
+  /* Chain connector */
+  .chain-connector {
+    @apply w-8 h-0.5 bg-chain mx-2 relative;
+  }
+  .chain-connector::after {
+    content: '';
+    @apply absolute right-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full border-2 border-chain-accent bg-background;
+  }
+  .chain-connector::before {
+    content: '';
+    @apply absolute left-0 top-1/2 -translate-y-1/2 w-2 h-2 rounded-full bg-chain-accent;
+  }
+
+  /* Verified badge */
+  .verified-badge {
+    @apply inline-flex items-center gap-1 text-xs font-medium px-2 py-0.5 rounded-full bg-accent/10 text-accent;
+  }
+
+  /* Glass card */
+  .glass-card {
+    @apply bg-glass/80 backdrop-blur-md border border-glass/20 rounded-xl;
+  }
+
+  /* Hero gradient background */
+  .hero-gradient {
+    background: linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--hero-gradient-end)));
+  }
+
+  /* Chain border animation */
+  @keyframes chain-pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 1; }
+  }
+  .chain-pulse {
+    animation: chain-pulse 2s ease-in-out infinite;
+  }
+
+  /* Transaction flow animation */
+  @keyframes tx-flow {
+    0% { transform: scaleX(0); transform-origin: left; }
+    50% { transform: scaleX(1); transform-origin: left; }
+    50.1% { transform-origin: right; }
+    100% { transform: scaleX(0); transform-origin: right; }
+  }
+  .tx-flow {
+    animation: tx-flow 3s ease-in-out infinite;
+  }
+
+  /* Block number header */
+  .block-number {
+    @apply text-xs font-mono text-muted-foreground bg-muted px-2 py-0.5 rounded;
+  }
+
+  /* Hex border style */
+  .hex-border {
+    @apply border border-dashed border-chain;
+  }
+}
+
+@layer utilities {
+  .story-link * {
+    @apply relative inline-block after:content-[''] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-0 after:left-0 after:bg-primary after:origin-bottom-right after:transition-transform after:duration-300 hover:after:scale-x-100 hover:after:origin-bottom-left;
+  }
+  .hover-scale {
+    @apply transition-transform duration-200 hover:scale-105;
+  }
+}
